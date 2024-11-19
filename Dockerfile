@@ -1,5 +1,5 @@
-# Use an official Python base image with a specified Python version (e.g., 3.11)
-FROM python:3.11-slim
+# Use the latest debian stable slim as the base image
+FROM debian:stable-slim
 
 # Set environment variables
 ENV DISPLAY=:99.0
