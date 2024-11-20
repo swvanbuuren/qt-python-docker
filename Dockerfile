@@ -1,5 +1,5 @@
-# Use the latest debian stable slim as the base image
-FROM debian:stable-slim
+# Use debian-slim based uv docker as the base image
+FROM ghcr.io/astral-sh/uv:debian-slim
 
 # Set environment variables
 ENV DISPLAY=:99.0
