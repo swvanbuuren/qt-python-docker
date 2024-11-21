@@ -18,6 +18,7 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
     libxcb-xinput0 \
     libxcb-xfixes0 \
     libxcb-shape0 \
+    libfontconfig1 \
     libglib2.0-0 \
     libgl1-mesa-dev \
     '^libxcb.*-dev' \
