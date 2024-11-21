@@ -1,5 +1,5 @@
-# Use debian-slim based uv docker as the base image
-FROM ghcr.io/astral-sh/uv:debian
+# Use ubuntu latest as the base image
+FROM ubuntu:latest
 
 # Set environment variables
 ENV DISPLAY=:99.0
@@ -18,14 +18,11 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
     libxcb-xinput0 \
     libxcb-xfixes0 \
     libxcb-shape0 \
-    libdbus-1-dev \
-    libfontconfig1 \
     libglib2.0-0 \
     libgl1-mesa-dev \
     '^libxcb.*-dev' \
     libx11-xcb-dev \
     libglu1-mesa-dev \
-    libpython3-dev \
     libxrender-dev \
     libxi-dev \
     libxkbcommon-dev \
@@ -37,6 +34,4 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
 # Start xvfb in the background
 CMD ["Xvfb", ":99", "-screen", "0", "1920x1080x24"]
 
-RUN chmod 777 /tmp
-
-USER root
+COPY --from=ghcr.io/astral-sh/uv:latest /uv /uvx /bin/
