@@ -1,5 +1,5 @@
 # Use debian-slim based uv docker as the base image
-FROM ghcr.io/astral-sh/uv:debian-slim
+FROM ghcr.io/astral-sh/uv:debian
 
 # Set environment variables
 ENV DISPLAY=:99.0
